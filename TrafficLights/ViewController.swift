@@ -12,7 +12,7 @@ enum CurrentLight {
     case red, yellow, green
 }
 
-//MARK: - Outlets
+// MARK: - Outlets
 class ViewController: UIViewController {
 
     @IBOutlet weak var redLight: UIView!
@@ -21,12 +21,12 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var startButton: UIButton!
 
-//MARK: - Private functions
+// MARK: - Private functions
     private var currentLight = CurrentLight.red
     private let lightIsOn: CGFloat = 1.0
     private let lightIsOff: CGFloat = 0.3
     
-//MARK: - viewDidLoad
+// MARK: - viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -37,14 +37,14 @@ class ViewController: UIViewController {
         greenLight.alpha = lightIsOff
     }
 
-//MARK: - viewDidLayoutSubviews
+// MARK: - viewDidLayoutSubviews
     override func viewDidLayoutSubviews() {
         redLight.layer.cornerRadius = redLight.frame.width / 2
         yellowLight.layer.cornerRadius = yellowLight.frame.width / 2
         greenLight.layer.cornerRadius = greenLight.frame.width / 2
     }
     
-//MARK: - IBAction
+// MARK: - IBAction
     @IBAction func startButtonPressed() {
         if startButton.currentTitle == "START" {
             startButton.setTitle("NEXT", for: .normal)
